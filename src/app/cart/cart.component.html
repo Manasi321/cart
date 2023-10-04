@@ -1,0 +1,103 @@
+<!-- <section id="cart-container" class=" my-5 ">
+    <table >
+      <thead>
+        <tr>
+          <td>&nbsp;&nbsp;Image</td>
+          <td>Product</td>
+          <td>Price</td>
+          <td>Quantity</td>
+          <td>Total</td>
+          <td>Remove</td>
+        </tr>
+      </thead>
+
+
+    </table> -->
+
+<ng-container *ngIf="getCartDetails != 0" class="super">
+  <div class="cart" *ngFor="let getCartDetail of getCartDetails">
+    <!-- Image Div -->
+    <div class="cart-image">
+      <img src="{{ getCartDetail.productImg }}" alt="" width="350" height="350"/>
+    </div>
+
+    <!-- Div for Details -->
+
+    <div class="cart-details">
+      <div class="begin">
+        <h5  class="heading"><span>Brand : </span>{{ getCartDetail.productName }}</h5> 
+        <h5 class="heading"><span>Price : </span>₹{{ getCartDetail.productPrice }}</h5>
+        <h5 class="heading"><span>Description : </span>₹{{ getCartDetail.productDetail }}</h5>
+      </div>
+
+      <div>
+        <p class="rating" >Rating: <span *ngFor="let _ of getStarArray( getCartDetail.rating)"><i class="fa-solid fa-star stars"></i></span></p>
+      </div>
+
+      <div class="increment">
+        <button (click)="DecQnt(getCartDetail.prodId, getCartDetail.qnt)">
+          -
+        </button>
+  
+       <button>{{ getCartDetail.qnt }}</button>
+
+        <button (click)="IncQnt(getCartDetail.prodId, getCartDetail.qnt)">
+          +
+        </button>
+      </div>
+
+        <!-- Total Price for quantities -->
+      <div class="price" style="justify-content: flex-start;">
+        <h1>Total price : <span>₹{{ getCartDetail.qnt * getCartDetail.productPrice | number }}</span></h1>
+      </div>
+
+      <!-- Remove Button -->
+      <div style="display: flex; justify-content: flex-start;">
+
+
+        <a id="remove"><button class="button1" style="height: 45px;"
+          
+          (click)="singleDelete(getCartDetail.prodId)">&nbsp;<i 
+            class="fa-solid fa-trash-can"></i> &nbsp;</button></a>
+      </div>
+
+      <!-- Total price -->
+
+      
+
+
+    </div>
+
+
+
+    
+  </div>
+
+  <div>
+    <div class="total">
+      <button>&nbsp;Total : ₹{{ total }} &nbsp;</button>
+    </div>
+
+    <!-- Remove All -->
+      <div class="simple1" style="display: flex; justify-content: space-between;">
+        <button class=" button1  " (click)="removeall()"  routerLink="" routerLinkActive="activelink" >
+          Remove All Item 
+        </button>
+
+        
+          <button class="button4" routerLink="" routerLinkActive="activelink">
+           Shop More 
+          </button>
+       
+      </div>
+
+    <!-- Shop More Button -->
+
+  </div>
+
+</ng-container>
+
+<ng-container *ngIf="getCartDetails == 0" routerLink="" routerLinkActive="activelink">
+  <!--Adding router link to home page-->
+
+</ng-container>

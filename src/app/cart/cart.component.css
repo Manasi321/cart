@@ -1,0 +1,258 @@
+  
+  
+  .cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    margin: auto;
+    height: 500px;
+    border: 2px solid black;
+    margin-top: 20px;
+    padding: 40px;
+    background-color: rgb(193, 220, 220);
+    border-radius: 20px;
+    
+
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    border: 2px solid rgba(255, 255, 255, .5);
+    
+    transition:  transform .5s ease ,.4s ease;
+  }
+
+  .cart:hover{
+    box-shadow: 0 0 30px rgba(204, 202, 202, 0.5);
+  }
+
+  
+
+
+  .cart-image{
+     margin-right: 40px;
+     border-radius: 5px;
+     border: 2px solid black;
+     border-radius: 15px;
+  }
+  
+  .cart-image img{
+    border-radius: 15px;
+  }
+
+  .super{
+    width: 1000px;
+  }
+
+  .begin h5{
+    font-size: 17px;
+  }
+
+  .begin h5 span{
+    font-size: 21px;
+    font-weight: 750;
+    color: black;
+  }
+
+  .rating{
+    display: flex;
+    margin-top: 0;
+    justify-content: flex-start;
+    font-size: 21px;
+    font-weight: 750;
+    color: black;
+  }
+
+  .rating span{
+    font-size: 19px;
+    color: rgb(238, 155, 47);
+  }
+
+  .increment button{
+    width: 80px;
+    height: 40px;
+  }
+  .increment button:nth-child(1){
+    background-color: rgb(118, 118, 213);
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    color: white;
+  }
+  .increment button:nth-child(2){
+    background-color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    color: black;
+  }
+
+  .increment button:nth-child(3){
+    background-color: rgb(39, 113, 39);
+    border-radius: 5px;
+    border: none;
+    color: white;
+     font-size: 20px;
+  }
+
+  .qnt{
+    background-color: #fff;
+  }
+  .price{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin-top: 17px;
+  }
+
+  .price h1{
+    font-size: 21px;
+  }
+
+  .price h1 span{
+    font-weight: 700;
+  }
+
+  .button1{
+    margin-top: 10px;
+    transition:.7s; width:180px; height: 50px; border: none; border-radius: 5px; background-color: rgb(183, 68, 68); color: white;
+    font-size: 20px;
+    border:2px solid red
+  }
+
+  .button1:hover{
+    color: red;
+    background-color: #fff;
+  }
+  
+
+  .button3{
+    margin-top: 10px;
+    transition:.7s; width:180px; height: 50px; border: none; border-radius: 5px; background-color: red; color: white;
+    font-size: 20px;
+    border:2px solid red
+  }
+
+  .button3:hover{
+    color: red;
+    background-color: #fff;
+  }
+
+
+  @media (max-width:1100px) {
+    .cart{
+      flex-direction: column;
+      width: 5500px;
+      height: 600px;
+    }
+    .cart-image img{
+     width: 150px;
+     height: 150px;
+    }
+
+    
+  }
+
+  @media (max-width:1099px) {
+    .cart{
+      height: 600px;
+      width: 500px;
+    }
+    .cart-image img{
+     width: 150px;
+     height: 150px;
+    }
+
+    
+  }
+
+  @media (max-width:768px) {
+    .cart{
+      height: 650px;
+      width: 400px;
+    }
+    .cart-image{
+      margin-bottom: 5px;
+    }
+
+
+    .cart-image img{
+     width: 180px;
+     height: 180px;
+     
+    }
+
+    
+  }
+
+  @media (max-width:390px) {
+    .cart{
+      height: 650px;
+      width: 250px;
+      font-size: 14px;
+    }
+    .cart-image img{
+     width: 120px;
+     height: 120px;
+    }
+
+    .increment button{
+      width: 50px;
+    }
+    .simple1 button{
+      width: 120px;
+      font-size: 16px;
+    }
+    .rating span{
+      font-size: 16px;
+      color: rgb(238, 155, 47);
+    }
+  
+
+    
+  }
+
+
+  .button4{
+    background-color: skyblue;
+    border-radius: 5px;
+    border: none;
+    color: black;
+    width: 170px;
+    height: 30px;
+    margin-bottom: 5px;
+  }
+
+  .total{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+  }
+
+  .total button{
+    height: 50px;
+    border: none;
+    width: 160px;
+    border-radius: 10px;
+    margin-top: 10px;
+    background-color: rgb(193, 220, 220);
+  }
+
+  .button4{
+    margin-top: 10px;
+    transition:.7s; width:180px; height: 50px; border: none; border-radius: 5px; background-color: black; color: white;
+    font-size: 20px;
+    border:2px solid black;
+  }
+
+  .button4:hover{
+    color: black;
+    background-color: #fff;
+  }
+
+  .shop{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 120px;
+   
+  }

@@ -1,0 +1,108 @@
+<div>
+
+
+<div class="section2" style="background-color: white;z-index: -1; ">
+  <button (click)="myFunction3()" class=" button-bars border2" id="bars" style="position: relative;">
+    <i class="fa-solid fa-bars" style="color:white;position: absolute;bottom: 34px; ">
+    </i>
+    </button>
+
+ <div style="position: relative;">
+  <ul class="list">
+    <li  routerLink="" routerLinkActive="activelink" ><a >Home</a ></li>
+      <li routerLink="cart" routerLinkActive="activelink" ><a>Cart Page</a ></li>
+      <li ><a >About us</a ></li>
+      <li ><a >New Arrivals</a ></li>
+      <li ><a>Sales</a ></li>
+   
+  </ul>
+ </div>
+    
+    
+ <!-- //Beginning of Category Section -->
+
+
+   <div #movableDiv2 class="movable-div2" style="position: fixed; top: 0;" >
+    <div class="box">
+
+      <div class="category" >
+        <ul style="margin-bottom: 0;" >
+          <div (click)="myFunction4()" class="cross2 cross">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </div>
+          <h1 style="cursor: pointer;" (click)="filter('')">Categories</h1>
+          <li (click)="filter('Apple')" >Iphone</li>
+          <li (click)="filter('Samsung')">Samsung</li>
+          <li (click)="filter('Dell')">Dell</li>
+          <li (click)="filter('Oppo')">Oppo</li>
+          <li (click)="filter('Redmi')">Redmi</li>
+          <li (click)="filter('Sony')">Sony</li>
+        </ul> 
+      </div>
+
+      <div class="rating" >
+        <h1 style="margin-right: 100px;"> Ratings</h1>
+        <div style="display: flex;align-items: flex-start; flex-direction: column; margin-top: 10px; padding-left:0px;">
+          <div (click)="filter2(1)" class="rating-1 align">
+            <p > <span *ngFor="let _ of getStarArray(1)"><i class="fa-solid fa-star stars"></i></span></p>
+            <p class="info2">(1-Star)</p>
+          </div>
+          <div (click)="filter2(2)" class="rating-2 align">
+            <p > <span *ngFor="let _ of getStarArray(2)"><i class="fa-solid fa-star stars"></i></span></p>
+            <p class="info2">(2-Star)</p>
+          </div>
+          <div  (click)="filter2(3)" class="rating-3 align">
+            <p > <span *ngFor="let _ of getStarArray(3)"><i class="fa-solid fa-star stars"></i></span></p>
+            <p class="info2">(3-Star)</p>
+          </div>
+          <div (click)="filter2(4)" class="rating-4 align">
+            <p > <span *ngFor="let _ of getStarArray(4)"><i class="fa-solid fa-star stars"></i></span></p>
+            <p class="info2">(4-Star)</p>
+          </div>
+          <div (click)="filter2(5)" class="rating-5 align">
+            <p > <span *ngFor="let _ of getStarArray(5)"><i class="fa-solid fa-star stars"></i></span></p>
+            <p class="info2">(5-Star)</p>
+          </div>
+        </div>
+
+      </div>
+
+   </div>
+   </div>
+</div>
+</div>
+
+<!-- Getting Daa Through an array -->
+
+<div class="master" >
+  <div class="row " style="background-color: rgb(150, 189, 176);">
+    <div class="column" *ngFor="let pd of filterCategory | filter:searchKey:'productName' " >
+      <div class="productBox">
+        <img [src]="pd.productImg" height="180px" width="180px" class="img" />
+        <h3 class="special">Manufacturer: <span>{{ pd.productName }}</span></h3>
+        <p class="details">Details: <span>{{ pd.productDetail }}</span></p>
+        <p>Rating: <span *ngFor="let _ of getStarArray(pd.rating)"><i class="fa-solid fa-star stars"></i></span></p>
+        <p>Mobile-Weight: <span>{{ pd.productWeight }} gm</span></p>
+        <p>Price: <span>{{ pd.productPrice | currency: "INR" }}</span></p>
+        <!-- <button class="minusbtn btn-primary btn-block" (click)="dec(pd)">
+          -
+        </button>
+        <span
+          ><button>{{ pd.qnt }}</button></span
+        >
+        <button class="plusbtn btn-primary btn-block" (click)="inc(pd)">
+          +
+        </button> -->
+      
+         <div class="btn-box">
+          <button class="button" (click)="addCart(pd)" >
+            &nbsp; Add to Cart  &nbsp;
+          </button>
+         </div>
+        
+
+      
+      </div>
+    </div>
+  </div>
+</div>
